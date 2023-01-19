@@ -2,31 +2,29 @@
 
 module.exports = (data, counter) => {
     return {
-        "type": "flex",
-        "direction": "vertical",
-        "spacing": 16,
-        "mainAxisAlignment": "spaceEvenly",
-        "crossAxisAlignment": "center",
-        "children": [
-            {
-                "type": "view",
-                "name": "counter",
-                "coll": "counter",
-                "query": {
-                    "user": "@me"
-                },
-                "props": { text: "My personnal counter" }
-            },
-            {
-                "type": "view",
-                "name": "counter",
-                "coll": "counter",
-                "query": {
-                    "user": "global"
-                },
-                "props": { text: "The common counter" }
-            }
-        ]
+        type: "container",
+        "constraints": {
+            "minWidth": 200,
+            "maxWidth": 600,
+        },
+        child: {
+            "type": "flex",
+            "direction": "vertical",
+            "spacing": 16,
+            "mainAxisAlignment": "spaceEvenly",
+            "crossAxisAlignment": "center",
+            "children": [
+                {
+                    type: "view",
+                    name: "todoList",
+                    coll: "todo",
+                    query: {
+                        inProgress: true,
+                        user: "@me"
+                    }
+                }
+            ]
+        }
     }
 }
 

@@ -4,7 +4,6 @@ module.exports = (data, props) => {
   return {
     "type": "flex",
     "direction": "vertical",
-    "scroll": true,
     "spacing": 4,
     "crossAxisAlignment": "center",
     "children": [
@@ -13,8 +12,16 @@ module.exports = (data, props) => {
         "name": "menu",
       },
       {
-        "type": "view",
-        "name": "home"
+        type: "flexible",
+        child: {
+          "type": "view",
+          "name": "home"
+        },
+      },
+
+      {
+        type: "view",
+        name: "footer"
       }
     ]
   }

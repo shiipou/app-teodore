@@ -46,7 +46,7 @@ module.exports = (data, props) => {
             "type": "container",
             "child": {
               "type": "text",
-              "value": "Hello World",
+              "value": "Teodore",
               "textAlign": "center",
               "style": {
                 "fontWeight": "bold",

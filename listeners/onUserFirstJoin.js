@@ -1,20 +1,15 @@
 'use strict'
 
 const apiService = require('../services/api');
+const todoService = require('../services/todo');    
 
 
 module.exports = async (props, event, api) => {
-    let res = await apiService.executeQuery(api, "counter", {
-        "user": "@me"
+    await todoService.create(api, {
+        body: "Exemple",
+        inProgress: true,
+        user: "@me"
     })
-
-    let counters = res.data;
-    if (counters.length == 0) {
-        await apiService.createDoc(api, "counter", {
-            "user": "@me",
-            "count": 0,
-        })
-    }
 
 
     return {};
