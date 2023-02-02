@@ -18,8 +18,10 @@ module.exports = async () => {
       onEnvStart: require('./listeners/onEnvStart'),
       onSessionStart: require('./listeners/onSessionStart'),
       onUserFirstJoin: require('./listeners/onUserFirstJoin'),
+      navigateTo: require('./listeners/navigateTo'),
       addTodo: require('./listeners/addTodo'),
-      checkTodo: require('./listeners/checkTodo')
+      checkTodo: require('./listeners/checkTodo'),
+      archiveTodo: require('./listeners/archiveTodo')
     },
     rootView: 'main'
   }

@@ -16,4 +16,3 @@ module.exports = (data, counter) => {
         })
     }
 }
-

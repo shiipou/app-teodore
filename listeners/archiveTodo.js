@@ -4,6 +4,6 @@ const todoService = require("../services/todo");
 
 
 module.exports = async (props, event, api) => {
-    props.inProgress = !props.inProgress;
+    props.archived = true
     return todoService.update(api, props)
 }

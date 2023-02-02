@@ -4,13 +4,13 @@ module.exports = (data, props) => {
     return {
         type: "actionable",
         onPressed: {
-            action: "checkTodo",
+            action: "navigateTo",
             props
         },
         child: {
             "type": "container",
             "decoration": {
-                color: 0xFFFFFFFF,
+                color: props.inProgress ? 0xFFFFFFFF : 0xFFE0E0E0,
                 boxShadow: {
                     blurRadius: 8,
                     color: 0x1A000000,
@@ -57,4 +57,3 @@ module.exports = (data, props) => {
         }
     }
 }
-

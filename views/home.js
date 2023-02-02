@@ -19,7 +19,8 @@ module.exports = (data, counter) => {
                     name: "todoList",
                     coll: "todo",
                     query: {
-                        inProgress: true,
+                        parent: data.currentTask,
+                        archived: false,
                         user: "@me"
                     }
                 }
@@ -27,4 +28,3 @@ module.exports = (data, counter) => {
         }
     }
 }
-

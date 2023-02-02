@@ -1,6 +1,5 @@
 'use strict'
 
-const { default: axios } = require("axios");
 const apiService = require("./api");
 
 module.exports = {
@@ -15,5 +14,13 @@ module.exports = {
     },
     delete(api, todo) {
         return apiService.deleteDoc(api, "todo", todo);
+    },
+    getRoot(api) {
+        // get any item with no parent
+        return apiService.executeQuery(api, "todo", { filter: { parent: null } });
+    },
+    childrenOf(api, todo) {
+        // get any item with the given parent
+        return apiService.executeQuery(api, "todo", { filter: { parent: todo._id } });
     }
 }

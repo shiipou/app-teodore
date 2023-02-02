@@ -15,7 +15,11 @@ module.exports = (data, props) => {
         type: "flexible",
         child: {
           "type": "view",
-          "name": "home"
+          "name": "home",
+          "coll": "users",
+          "query": {
+            "id": "@me"
+          }
         },
       },
 
@@ -26,4 +30,3 @@ module.exports = (data, props) => {
     ]
   }
 }
-
