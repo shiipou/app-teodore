@@ -3,16 +3,16 @@
 const apiService = require("./api");
 
 module.exports = {
-    all(api) {
-        return apiService.executeQuery(api, "users", {});
+    async all(api) {
+        return (await apiService.executeQuery(api, "users", {})).data;
     },
-    one(api, id) {
-        return apiService.executeQuery(api, "users", { id: id } );
+    async one(api, id) {
+        return (await apiService.executeQuery(api, "users", { id: id } )).data[0];
     },
-    create(api, user) {
-        return apiService.createDoc(api, "users", user);
+    async create(api, user) {
+        return (await apiService.createDoc(api, "users", user)).data;
     },
-    update(api, user) {
-        return apiService.updateDoc(api, "users", user);
+    async update(api, user) {
+        return (await apiService.updateDoc(api, "users", user)).data;
     }
 }

@@ -3,24 +3,24 @@
 const apiService = require("./api");
 
 module.exports = {
-    all(api) {
-        return apiService.executeQuery(api, "todo", {});
+    async all(api) {
+        return (await apiService.executeQuery(api, "todo", {})).data;
     },
-    create(api, todo) {
-        return apiService.createDoc(api, "todo", todo);
+    async create(api, todo) {
+        return (await apiService.createDoc(api, "todo", todo)).data;
     },
-    update(api, todo) {
-        return apiService.updateDoc(api, "todo", todo);
+    async update(api, todo) {
+        return (await apiService.updateDoc(api, "todo", todo)).data;
     },
-    delete(api, todo) {
-        return apiService.deleteDoc(api, "todo", todo);
+    async delete(api, todo) {
+        return (await apiService.deleteDoc(api, "todo", todo)).data;
     },
-    getRoot(api) {
+    async getRoot(api) {
         // get any item with no parent
-        return apiService.executeQuery(api, "todo", { filter: { parent: null } });
+        return (await apiService.executeQuery(api, "todo", { filter: { parent: null } })).data;
     },
-    childrenOf(api, todo) {
+    async childrenOf(api, todo) {
         // get any item with the given parent
-        return apiService.executeQuery(api, "todo", { filter: { parent: todo._id } });
+        return (await apiService.executeQuery(api, "todo", { filter: { parent: todo._id } })).data;
     }
 }

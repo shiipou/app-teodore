@@ -9,6 +9,7 @@ module.exports = async () => {
       counter: require('./views/counter'),
       home: require('./views/home'),
       menu: require('./views/menu'),
+      listView: require('./views/listView'),
       todoList: require('./views/todoList'),
       task: require('./views/task'),
       footer: require('./views/footer')

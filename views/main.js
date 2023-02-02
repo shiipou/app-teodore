@@ -10,6 +10,10 @@ module.exports = (data, props) => {
       {
         "type": "view",
         "name": "menu",
+        "coll": "users",
+        "query": {
+          "id": "@me"
+        }
       },
       {
         type: "flexible",
@@ -22,7 +26,6 @@ module.exports = (data, props) => {
           }
         },
       },
-
       {
         type: "view",
         name: "footer"

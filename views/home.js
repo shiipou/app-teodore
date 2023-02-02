@@ -2,6 +2,31 @@
 
 module.exports = (data, counter) => {
     return {
+        "type": "flex",
+        "direction": "vertical",
+        "spacing": 4,
+        "crossAxisAlignment": "center",
+        "children": [
+          {
+            type: "flexible",
+            child: {
+              "type": "view",
+              "name": "home",
+              "coll": "users",
+              "query": {
+                "id": "@me"
+              }
+            },
+          },
+          {
+            type: "view",
+            name: "footer"
+          }
+        ]
+      }
+
+
+    {
         type: "container",
         "constraints": {
             "minWidth": 200,

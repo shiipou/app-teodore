@@ -2,8 +2,7 @@
 
 const apiService = require('../services/api');
 const todoService = require('../services/todo');
-const userService = require('../services/todo');
-
+const userService = require('../services/users');
 
 module.exports = async (props, event, api) => {
     await todoService.create(api, {
@@ -15,7 +14,7 @@ module.exports = async (props, event, api) => {
     })
     await userService.create(api, {
         id: "@me",
-        currentTask: null
+        currentList: null
     })
 
     return {};
